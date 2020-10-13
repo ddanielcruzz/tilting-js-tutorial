@@ -1,0 +1,151 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inconsolata", monospace;
+  font-size: 24px;
+  color: #fffafa;
+}
+
+.card {
+  transform: perspective(1000px);
+  box-sizing: border-box;
+  height: 300px;
+  width: 550px;
+  box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3);
+  border-radius: 15px;
+  display: grid;
+  transform-style: preserve-3d;
+  grid-template:
+    "top top" 3fr
+    "middle middle" 1fr
+    "bottom-left bottom-right" 1fr / 1fr 1fr;
+  padding: 20px 40px;
+  transition: all 200ms ease-out;
+  background-color: #fffafa;
+  background-color: #2f00ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(289,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2386c3ff'/%3E%3Cstop offset='1' stop-color='%23ffffff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='4' height='4' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%232f00ff' cx='2' cy='2' r='2'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.chip {
+  height: 42px;
+  width: 52px;
+  background: linear-gradient(135deg, #fffcb1 0%, #b4a365 100%);
+  grid-area: top;
+  align-self: end;
+  border-radius: 5px;
+  transform: translateZ(50px);
+  display: grid;
+  grid-template:
+    "chip-left . ." 1fr
+    "chip-left . chip-right" 3fr
+    / 1fr 1fr 1fr;
+}
+
+.chip-inside {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.chip-left {
+  grid-area: chip-left;
+  grid-template:
+    "." 1fr
+    "one" 1fr
+    "two" 1fr
+    "." 1fr / 1fr;
+  border-right: 1px solid black;
+}
+
+.inside-left-one {
+  grid-area: one;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.inside-left-two {
+  grid-area: two;
+  border-bottom: 1px solid black;
+}
+
+.chip-right {
+  grid-area: chip-right;
+  grid-template:
+    "." 1fr
+    "center" 1fr
+    "." 1fr / 1fr;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.inside-right {
+  grid-area: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.chip-shadow {
+  transform: translateZ(0);
+  background: rgba(0, 0, 0, 0.5);
+  filter: blur(20px);
+}
+
+.numbers {
+  letter-spacing: 5px;
+  grid-area: middle;
+  transform: translateZ(50px);
+}
+
+.name {
+  grid-area: bottom-left;
+  transform: translateZ(50px);
+}
+
+.shadow {
+  transform: translateZ(0);
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  transform: translateZ(50px);
+  grid-area: bottom-right;
+  justify-self: end;
+}
+
+.logo-shadow {
+  transform: translateZ(0);
+  opacity: 0.5;
+  filter: blur(20px);
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  mix-blend-mode: color-dodge;
+}
+
+.red {
+  background-color: #eb011b;
+}
+
+.yellow {
+  background-color: #f79e18;
+  transform: translateX(-40%);
+}
+
+.circle-shadow {
+  background-color: rgba(0, 0, 0, 1);
+}
